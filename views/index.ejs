@@ -1,0 +1,17 @@
+<!-- HOME PAGE -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shop</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>This is an Online Shop Prototype</h1>
+    <h2>Categories:</h2>
+    <ul>
+        <% categories.forEach(category => { %>
+            <li><a href="/categories/<%= category.id %>"><%= category.name %></a></li>
+        <% }); %>
+    </ul>
+</body>
+</html>

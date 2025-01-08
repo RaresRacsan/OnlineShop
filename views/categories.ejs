@@ -1,0 +1,18 @@
+<!-- Category page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Products in Category <%= categoryId %></h1>
+    <ul>
+        <% filteredProducts.forEach(product => { %>
+            <li>
+                <a href="/categories/product/<%= product.id %>"><%= product.name %></a> - $<%= product.price %>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

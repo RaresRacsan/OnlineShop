@@ -10,15 +10,18 @@ const products = [
 ];
 
 router.get('/:categoryId', (req, res) => {
-    const categoryId = parseInt(req.params.categoryId);
-    const filteredProducts = products.filter(product => product.category_id === categoryId);
-
-    if(filteredProducts.length === 0) {
-        return res.status(404).send('Category not found');
+    console.log(`Request for Category ID: ${req.params.categoryId}`);  // Log Category ID
+    
+    const categoryId = parseInt(req.params.categoryId);  
+    const filteredProducts = products.filter(p => p.category_id === categoryId);
+  
+    if (filteredProducts.length === 0) {
+      return res.status(404).send('Category not found');
     }
-
-    res.render('category', { categoryId, filteredProducts });
-});
+  
+    res.render('categories', { categoryId, filteredProducts });
+  });
+  
 
 router.get('/:product/:productId', (req, res) => {
     const productId = parseInt(req.params.productId);
