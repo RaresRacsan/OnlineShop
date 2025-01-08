@@ -1,8 +1,14 @@
 const db = require('../database/db');
 
 module.exports = {
-    getProductByCategoryId: function(categoryId, callback) {
-        db.all('select * from products where category_id = ?', [categoryId], (err, rows) => {
+    getProductByCategoryName: function(categoryName, callback) {
+        const query = `
+            SELECT p.*, c.name as category_name 
+            FROM products p 
+            JOIN categories c ON p.category_id = c.id 
+            WHERE c.name = ?`;
+
+        db.all(query, [categoryName], (err, rows) => {
             if(err) {
                 return callback(err);
             }

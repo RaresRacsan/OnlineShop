@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Products = require('../models/product');
 
-router.get('/:categoryId', (req, res) => {
-    const categoryId = parseInt(req.params.categoryId);
+router.get('/:categoryName', (req, res) => {
+    const categoryName = req.params.categoryName;
     
-    Products.getProductByCategoryId(categoryId, (err, filteredProducts) => {
+    Products.getProductByCategoryName(categoryName, (err, filteredProducts) => {
         if(err) {
             console.error('Database error:', err);
             return res.status(500).send('Database error on getProductByCategoryId');
@@ -13,7 +13,10 @@ router.get('/:categoryId', (req, res) => {
         if(filteredProducts.length === 0) {
             return res.status(404).send('Category not found');
         }
-        res.render('categories', { categoryId, filteredProducts });
+
+        const categoryName = filteredProducts[0].category_name;
+
+        res.render('categories', { categoryName, filteredProducts });
     });
 });
 

@@ -10,7 +10,7 @@
     <h2>Categories:</h2>
     <ul>
         <% categories.forEach(category => { %>
-            <li><a href="/categories/<%= category.id %>"><%= category.name %></a></li>
+            <li><a href="/categories/<%= category.name %>"><%= category.name %></a></li>
         <% }); %>
     </ul>
 </body>
