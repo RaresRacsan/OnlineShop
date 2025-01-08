@@ -1,7 +1,12 @@
-const categories = [
-    {id: 1, name: 'Electronics'},
-    {id: 2, name: 'Books'},
-    {id: 3, name: 'Clothing'}
-];
+const db = require('../database/db');
 
-module.exports = categories;
+module.exports = {
+    getAllCategories: function(callback) {
+        db.all('select * from categories', (err, rows) => {
+            if(err) {
+                return callback(err);
+            }
+            callback(null, rows);
+        });
+    }
+};

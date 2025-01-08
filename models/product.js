@@ -1,7 +1,21 @@
-const products = [
-    { id: 1, name: 'Laptop', price: 999.99, category_id: 1 },
-    { id: 2, name: 'Smartphone', price: 699.99, category_id: 1 },
-    { id: 3, name: 'Novel', price: 19.99, category_id: 2 },
-    { id: 4, name: 'T-Shirt', price: 14.99, category_id: 3 }
-];
-module.exports = products;
+const db = require('../database/db');
+
+module.exports = {
+    getProductByCategoryId: function(categoryId, callback) {
+        db.all('select * from products where category_id = ?', [categoryId], (err, rows) => {
+            if(err) {
+                return callback(err);
+            }
+            callback(null, rows);
+        });
+    },
+
+    getProductById: function(productId, callback) {
+        db.get('SELECT * FROM products WHERE id = ?', [productId], (err, row) => {
+            if(err) {
+                return callback(err);
+            }
+            callback(null, row);
+        });
+    }
+};
