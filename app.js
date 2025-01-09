@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 // Import Routes
 const indexRoute = require('./routes/index');
 const categoriesRoute = require('./routes/categories');
+const searchRoute = require('./routes/search');
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes
 app.use('/', indexRoute);
 app.use('/categories', categoriesRoute);
+app.use('/search', searchRoute);
 
 // Start server on port 3000
 app.listen(3000, () => {

@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>This is an Online Shop Prototype</h1>
+
+    <!-- Search Form -->
+    <form action="/search" method="GET">
+        <input type="text" name="query" placeholder="Search products...">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Show Categories -->
     <h2>Categories:</h2>
     <ul>
         <% categories.forEach(category => { %>

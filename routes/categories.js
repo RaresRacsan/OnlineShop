@@ -14,8 +14,6 @@ router.get('/:categoryName', (req, res) => {
             return res.status(404).send('Category not found');
         }
 
-        const categoryName = filteredProducts[0].category_name;
-
         res.render('categories', { categoryName, filteredProducts });
     });
 });

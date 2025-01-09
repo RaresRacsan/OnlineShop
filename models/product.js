@@ -1,3 +1,4 @@
+const { query } = require('express');
 const db = require('../database/db');
 
 module.exports = {
@@ -22,6 +23,23 @@ module.exports = {
                 return callback(err);
             }
             callback(null, row);
+        });
+    },
+
+    searchProducts: function(searchQuery, callback) {
+        const sqlQuery = `
+            select p.*, c.name as category_name
+            from products p
+            join categories c on p.category_id = c.id
+            where p.name like ? or c.name like ?`;
+        
+        const searchParam = `${searchQuery}%`;
+
+        db.all(sqlQuery, [searchParam, searchParam], (err, rows) => {
+            if(err) {
+                return callback(err);
+            }
+            callback(null, rows);
         });
     }
 };

@@ -1,0 +1,32 @@
+<!-- Search result page -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Result</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1>Search Results for "<%= searchQuery %>"</h1>
+
+    <% if (products.length === 0) { %>
+        <p>No products found.</p>
+    <% } else { %>
+        <ul>
+            <% products.forEach(product => { %>
+                <li>
+                    <a href="/categories/product/<%= product.id %>">
+                        <%= product.name %>
+                    </a> 
+                    - $<%= product.price %> 
+                    (Category: <%= product.category_name %>)
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    
+    <p><a href="/">Back to Home</a></p>
+</body>
+
+</html>
