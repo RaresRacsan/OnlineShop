@@ -115,8 +115,8 @@ const db = new sqlite3.Database(dbPath, (err) => {
         ('Smart Watch', 299.99, 15, 'Fitness tracking watch', 5, 95, 435),
         ('Soccer Ball', 19.99, 40, 'Official size soccer ball', 16, 51, 230),
         ('Sunglasses', 129.99, 25, 'Polarized sunglasses', 1, 64, 290),
-        ('Tablet', 399.99, 12, '10-inch Android tablet', 5, 57, 260)
-        -- Continued in next block due to length...
+        ('Tablet', 399.99, 12, '10-inch Android tablet', 5, 57, 260),
+        ('Zero Sugar Energy Drink', 2.99, 100, 'Zero sugar energy drink', 6, 55, 250)
 `;
 
     db.exec(schema, (err) => {
