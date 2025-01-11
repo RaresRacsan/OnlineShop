@@ -11,5 +11,13 @@ module.exports = {
             if(err) return callback(err);
             callback(null, rows);
         });
+    }, 
+    
+    addToCart: function(productId, quantity, callback) {
+        const query = 'INSERT INTO cart(product_id, quantity) VALUES(?, ?)';
+        db.run(query, [productId, quantity], (err) => {
+            if(err) return callback(err);
+            callback(null);
+        });
     }
 };

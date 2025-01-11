@@ -11,4 +11,16 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/add', (req, res) => {
+    const productId = req.body.productId;
+    const quantity = parseInt(req.body.quantity);
+
+    Cart.addToCart(productId, quantity, (err) => {
+        if(err) {
+            return res.status(500).json({success:false, error: 'Database error on addToCart' });
+        }
+        res.json({ success: true, message: 'Product added to cart' });
+    });
+});
+
 module.exports = router;
