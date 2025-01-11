@@ -1,28 +1,38 @@
 <!-- HOME PAGE -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Online Shop</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
-    <h1>This is an Online Shop Prototype</h1>
+    <h1>Online Shop</h1>
 
     <!-- View Cart -->
-    <a href="/cart">View Cart</a>
+    <div class="cart-button">
+        <a class="view-cart-text" href="/cart">View Cart</a>
+    </div>
 
     <!-- Search Form -->
-    <form action="/search" method="GET">
-        <input type="text" name="query" placeholder="Search products...">
-        <button type="submit">Search</button>
+    <form class="search-form" action="/search" method="GET">
+        <input class="search-input" type="text" name="query" placeholder="Search products...">
+        <button class="search-btn" type="submit">Search</button>
     </form>
 
     <!-- Show Categories -->
-    <h2>Categories:</h2>
-    <ul>
-        <% categories.forEach(category => { %>
-            <li><a href="/categories/<%= category.name %>"><%= category.name %></a></li>
-        <% }); %>
-    </ul>
+    <div class="categories">
+        <h2 class="category-title">Categories:</h2>
+        <ul>
+            <% categories.forEach(category=> { %>
+                <li class="category-item"><a class="category-text" href="/categories/<%= category.name %>">
+                        <%= category.name %>
+                    </a></li>
+                <% }); %>
+        </ul>
+    </div>
+
 </body>
+
 </html>
