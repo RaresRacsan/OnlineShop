@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Category Products</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
-    <h1>Products in "<%= categoryName %>"</h1>
+    <!-- Header -->
+    <div class="header">
+        <h1 class="title">Online Shop</h1>
+        <h1 class="categories-page-title">Products in "<%= categoryName %>"</h1>
 
-    <!-- View Cart -->
-    <a href="/cart">View Cart</a>
+        <!-- View Cart -->
+        <div class="cart-button">
+            <a class="view-cart-text" href="/cart">View Cart</a>
+        </div>
 
-    <ul>
-        <% filteredProducts.forEach(product => { %>
-            <li>
-                <a href="/categories/product/<%= product.id %>"><%= product.name %></a> - $<%= product.price %>
-            </li>
-        <% }); %>
-    </ul>
-    <p><a href="/">Back to Categories</a></p>
+    </div>
+
+    <!-- Show Products -->
+    <div class="show-products">
+        <ul>
+            <% filteredProducts.forEach(product=> { %>
+                <li>
+                    <a href="/categories/product/<%= product.id %>">
+                        <%= product.name %>
+                    </a> - $<%= product.price %>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+
+    <!-- Back To Main Page -->
+    <div class="back-home">
+        <p><a class="back-home-text" href="/">Back to Categories</a></p>
+    </div>
 </body>
+
 </html>

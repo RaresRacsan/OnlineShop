@@ -1,17 +1,43 @@
-/* public/styles.css */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: white;
+    background-color: rgb(224, 224, 224);
 }
 
-h1 {
-    color: black;
+ul {
+    list-style-type: none;
+}
+
+.title {
+    color: rgb(255, 255, 255);
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    margin-left: 43px;
+    margin-right: 43px;
     width: 150px;
     text-align: center;
-    margin-left: 40px;
+    float: right;
+}
+
+.categories-page-title {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    width: 400px;
+    text-align: center;
+    margin-left: 43px;
+    margin-right: 43px;
+    margin-top: 18px;
+}
+
+.header {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(80, 80, 80);
+    height: 67px;
 }
 
 .cart-button {
@@ -31,6 +57,7 @@ h1 {
 .cart-button:hover {
     transform: scale(1.05);
     background-color: rgb(85, 85, 85);
+    border: 1px solid gray;
 }
 
 .view-cart-text {
@@ -39,7 +66,7 @@ h1 {
     color: rgb(255, 255, 255);
     text-align: center;
     display: inline-block;
-    padding: 13px;
+    padding: 14px;
 }
 
 .search-form {
@@ -50,7 +77,6 @@ h1 {
     top: 0;
     padding: 10px;
     margin-left: 10%;
-    margin-right: 10%;
 }
 
 .search-input {
@@ -82,6 +108,8 @@ h1 {
 .search-btn:hover {
     transform: scale(1.05);
     background-color: rgb(85, 85, 85);
+    border: 1px solid gray;
+    cursor: pointer;
 }
 
 .categories {
@@ -94,12 +122,11 @@ h1 {
     padding: 15px;
     width: 200px;
     margin: 40px 0;
-    position: relative;
+    position: absolute;
     left: 0;
 }
 
 .categories ul {
-    list-style-type: none; 
     padding: 0;
     margin: 0;
     width: 100%;
@@ -140,4 +167,33 @@ h1 {
     color: White;
     font-size: 20px;
     font-weight:900;
+}
+
+.back-home {
+    position: fixed;
+    bottom: 0;
+    background-color: gray;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin: 0px 0px 20px 20px;
+}
+
+.back-home:hover {
+    transform: scale(1.05);
+    background-color: rgb(85, 85, 85);
+    border: 1px solid gray;
+}
+
+.back-home-text {
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    text-decoration: none !important;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+
+.show-products {
+    margin: 100px;
 }
