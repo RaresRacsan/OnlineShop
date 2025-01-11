@@ -1,0 +1,27 @@
+<!-- View Cart Page-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1>Your Shopping Cart</h1>
+
+    <% if (cartItems.length === 0) { %>
+        <p>Your cart is empty</p>
+    <% } else { %>
+        <ul>
+            <% cartItems.forEach(item => { %>
+                <li>
+                    <%= item.name %> - $<%= item.price %> 
+                    (Quantity: <%= item.quantity %>)
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

@@ -34,6 +34,13 @@ const db = new sqlite3.Database(dbPath, (err) => {
             FOREIGN KEY (category_id) REFERENCES categories(id)
         );
 
+        CREATE TABLE cart (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            product_id INTEGER,
+            quantity INTEGER NOT NULL DEFAULT 1,
+            FOREIGN KEY (product_id) REFERENCES products(id)
+        );
+
         -- Insert sample data
         INSERT INTO categories (name) VALUES 
             ('Electronics'),
