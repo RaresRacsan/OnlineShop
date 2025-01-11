@@ -23,4 +23,14 @@ router.post('/add', (req, res) => {
     });
 });
 
+router.delete('/remove/:id', (req, res) => {
+    const cartItemId = req.params.id;
+    Cart.removeFromCart(cartItemId, (err) => {
+        if(err) {
+            return res.status(500).json({ success: false, message: 'Error removing item' });
+        }
+        res.json({ success: true, message: 'Item removed from cart' });
+    });
+});
+
 module.exports = router;

@@ -19,5 +19,10 @@ module.exports = {
             if(err) return callback(err);
             callback(null);
         });
+    }, 
+
+    removeFromCart: function(cartItemId, callback) {
+        const query = 'DELETE FROM cart WHERE id = ?';
+        db.run(query, [cartItemId], callback);
     }
 };

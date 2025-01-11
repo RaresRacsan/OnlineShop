@@ -15,6 +15,7 @@
         <ul>
             <% cartItems.forEach(item => { %>
                 <li>
+                    <span onclick="removeItem(<%= item.id %>)">✕</span>
                     <%= item.name %> - $<%= item.price %> 
                     (Quantity: <%= item.quantity %>)
                 </li>
@@ -23,5 +24,7 @@
     <% } %>
     
     <p><a href="/">Back to Home</a></p>
+
+    <script src="/js/remove_from_cart.js"></script>
 </body>
 </html>
