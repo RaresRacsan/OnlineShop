@@ -14,10 +14,10 @@
     <% } else { %>
         <ul>
             <% cartItems.forEach(item => { %>
-                <li>
+                <li id="cart-item-<%= item.id %>">
                     <span onclick="removeItem(<%= item.id %>)">✕</span>
                     <%= item.name %> - $<%= item.price %> 
-                    (Quantity: <%= item.quantity %>)
+                    (Quantity: <%= item.total_quantity %>)
                 </li>
             <% }); %>
         </ul>
@@ -25,13 +25,19 @@
 
     <p>Total: <% let total = 0 %>
         <% cartItems.forEach(item => { %>
-        <% total = total + item.price * item.quantity %>
+        <% total = total + item.price * item.total_quantity %>
     <% }); %>
     $<%= total %>
     </p>
     
+    <button id="resetCart">Reset Cart</button>
+    <button id="checkout">Checkout</button>
+
+    <div id="message"></div>
+    
     <p><a href="/">Back to Home</a></p>
 
     <script src="/js/remove_from_cart.js"></script>
+    <script src="/js/cart_operations.js"></script>
 </body>
 </html>

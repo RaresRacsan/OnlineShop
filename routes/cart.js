@@ -17,9 +17,15 @@ router.post('/add', (req, res) => {
 
     Cart.addToCart(productId, quantity, (err) => {
         if(err) {
-            return res.status(500).json({success:false, error: 'Database error on addToCart' });
+            return res.status(400).json({ 
+                success: false, 
+                message: err.message 
+            });
         }
-        res.json({ success: true, message: 'Product added to cart' });
+        res.json({ 
+            success: true, 
+            message: 'Product added to cart' 
+        });
     });
 });
 
@@ -30,6 +36,24 @@ router.delete('/remove/:id', (req, res) => {
             return res.status(500).json({ success: false, message: 'Error removing item' });
         }
         res.json({ success: true, message: 'Item removed from cart' });
+    });
+});
+
+router.post('/reset', (req, res) => {
+    Cart.resetCart((err) => {
+        if(err) {
+            return res.status(500).json({ success: false, message: 'Error resetting cart' });
+        }
+        res.json({ success: true, message: 'Cart reset successfully' });
+    });
+});
+
+router.post('/checkout', (req, res) => {
+    Cart.checkout((err) => {
+        if(err) {
+            return res.status(500).json({ success: false, message: 'Error during checkout' });
+        }
+        res.json({ success: true, message: 'Checkout successful' });
     });
 });
 

@@ -12,12 +12,19 @@ document.getElementById('addToCartForm').onsubmit = function(e) {
     .then(response => response.json())
     .then(data => {
         const messageDiv = document.getElementById('message');
-        messageDiv.textContent = 'Product added to cart!';
         messageDiv.style.display = 'block';
-        messageDiv.style.backgroundColor = '#4CAF50';
-        messageDiv.style.color = 'white';
         messageDiv.style.padding = '10px';
         messageDiv.style.margin = '10px 0';
+        
+        if(data.success) {
+            messageDiv.textContent = 'Product added to cart!';
+            messageDiv.style.backgroundColor = '#4CAF50';
+            messageDiv.style.color = 'white';
+        } else {
+            messageDiv.textContent = data.message;
+            messageDiv.style.backgroundColor = '#f44336';
+            messageDiv.style.color = 'white';
+        }
         
         setTimeout(() => {
             messageDiv.style.display = 'none';
