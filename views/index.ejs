@@ -36,6 +36,24 @@
         </ul>
     </div>
 
+    <!-- Trending Items Section -->
+    <div class="trending-section">
+        <h2 class="trending-title">Trending Items</h2>
+        <div class="trending-grid">
+            <% trendingItems.forEach(item => { %>
+                <div class="product-card">
+                    <h3 class="product-name"><%= item.name %></h3>
+                    <p class="product-price">$<%= item.price %></p>
+                    <p class="product-rating">
+                        Rating: <%= (item.rating_sum / item.rating_count).toFixed(1) %>/5
+                        (<%= item.rating_count %> reviews)
+                    </p>
+                    <a href="/categories/product/<%= item.id %>" class="view-product">View Details</a>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
 </body>
 
 </html>
