@@ -8,6 +8,7 @@ ul {
 }
 
 .title {
+    flex: 0 0 170px;
     color: rgb(255, 255, 255);
     font-size: 24px;
     margin-top: 18px;
@@ -31,6 +32,8 @@ ul {
 
 .header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -38,6 +41,8 @@ ul {
     width: 100%;
     background-color: rgb(80, 80, 80);
     height: 67px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .cart-button {
@@ -71,12 +76,14 @@ ul {
 
 .search-form {
     display: flex;
+    flex: 0 0 50%;
     justify-content: center;
     position: fixed;
-    width: 80%;
+    width: 100%;
     top: 0;
     padding: 10px;
     margin-left: 10%;
+    margin: 0 20px;
 }
 
 .search-input {
@@ -85,6 +92,7 @@ ul {
     border: 2px solid gray;
     border-radius: 10px;
     background-color: lightgray;
+    margin-left: 240px;
 }
 
 .search-input:hover {
@@ -102,7 +110,8 @@ ul {
     border: none;
     border-radius: 10px;
     margin-left: 10px;
-    color: white
+    color: white;
+    margin-right: 168px;
 }
 
 .search-btn:hover {
