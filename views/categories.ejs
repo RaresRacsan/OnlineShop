@@ -10,17 +10,22 @@
     <!-- Header -->
     <div class="header">
         <h1 class="title">Online Shop</h1>
-        <h1 class="categories-page-title">Products in "<%= categoryName %>"</h1>
-
         <!-- View Cart -->
         <div class="cart-button">
             <a class="view-cart-text" href="/cart">View Cart</a>
         </div>
 
+        <!-- Search Form -->
+        <form class="search-form" action="/search" method="GET">
+            <input class="search-input" type="text" name="query" placeholder="  Search products...">
+            <button class="search-btn" type="submit">Search</button>
+        </form>
     </div>
 
     <!-- Show Products -->
     <div class="show-products">
+        <h1 class="categories-page-title">Products in "<%= categoryName %>"</h1>
+
         <ul>
             <% filteredProducts.forEach(product=> { %>
                 <li>

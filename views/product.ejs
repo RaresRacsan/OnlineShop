@@ -3,11 +3,23 @@
 <html>
 <head>
     <title>Product Details</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <!-- View Cart -->
-    <a href="/cart">View Cart</a>
+    <!-- Header -->
+    <div class="header">
+        <h1 class="title">Online Shop</h1>
+        <!-- View Cart -->
+        <div class="cart-button">
+            <a class="view-cart-text" href="/cart">View Cart</a>
+        </div>
+
+        <!-- Search Form -->
+        <form class="search-form" action="/search" method="GET">
+            <input class="search-input" type="text" name="query" placeholder="  Search products...">
+            <button class="search-btn" type="submit">Search</button>
+        </form>
+    </div>
 
     <!-- Item information -->
     <h1><%= product.name %></h1>
