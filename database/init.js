@@ -81,7 +81,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         ('Diamond Ring', 1999.99, 3, '14K gold diamond ring', 10, 7, 32),
         ('Dog Leash', 14.99, 60, 'Durable nylon leash', 15, 42, 185),
         ('Drawing Tablet', 299.99, 10, 'Digital art tablet', 2, 16, 72),
-        ('Dress Shirt', 45.99, 40, 'Cotton dress shirt', 4, 33, 145),
+        ('Dress', 45.99, 40, 'Cotton dress shirt', 4, 33, 145),
         ('Dumbbell Set', 129.99, 15, '5-25lb dumbbell set', 16, 28, 125),
         ('Electric Guitar', 399.99, 6, 'Solid body electric guitar', 12, 11, 48),
         ('External Hard Drive', 89.99, 25, '2TB portable drive', 5, 38, 170),
