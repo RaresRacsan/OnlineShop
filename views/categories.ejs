@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Category Products</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
-    <!-- Header -->
     <div class="header">
         <h1 class="title">Online Shop</h1>
-        <!-- View Cart -->
         <div class="cart-button">
             <a class="view-cart-text" href="/cart">View Cart</a>
         </div>
-
-        <!-- Search Form -->
         <form class="search-form" action="/search" method="GET">
-            <input class="search-input" type="text" name="query" placeholder="  Search products...">
+            <input class="search-input" type="text" name="query" placeholder="Search products...">
             <button class="search-btn" type="submit">Search</button>
         </form>
     </div>
 
-    <!-- Show Products -->
-    <div class="show-products">
-        <h1 class="categories-page-title">Products in "<%= categoryName %>"</h1>
+    <h1 class="category-header">Products in "<%= categoryName %>"</h1>
 
-        <ul>
-            <% filteredProducts.forEach(product=> { %>
-                <li>
-                    <a href="/categories/product/<%= product.id %>">
-                        <%= product.name %>
-                    </a> - $<%= product.price %>
-                </li>
-                <% }); %>
-        </ul>
+    <div class="products-grid">
+        <% filteredProducts.forEach(product => { %>
+            <div class="product-card">
+                <h3 class="product-name"><%= product.name %></h3>
+                <p class="product-price">$<%= product.price %></p>
+                <p class="product-rating">
+                    Rating: <%= (product.rating_sum / product.rating_count).toFixed(1) %>/5
+                    (<%= product.rating_count %> reviews)
+                </p>
+                <a href="/categories/product/<%= product.id %>" class="view-product">View Details</a>
+            </div>
+        <% }); %>
     </div>
 
-    <!-- Back To Main Page -->
-    <div class="back-home">
-        <p><a class="back-home-text" href="/">Back to Categories</a></p>
-    </div>
+    <p><a href="/" class="back-link">Back to Categories</a></p>
 </body>
-
 </html>

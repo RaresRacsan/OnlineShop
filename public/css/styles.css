@@ -21,7 +21,7 @@ ul {
 }
 
 .categories-page-title {
-    color: rgb(255, 255, 255);
+    color: #333;
     font-size: 24px;
     width: 400px;
     text-align: center;
@@ -261,4 +261,31 @@ ul {
 
 .view-product:hover {
     background-color: #2b6cb0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.category-header {
+    text-align: center;
+    color: #333;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    color: #4299e1;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
