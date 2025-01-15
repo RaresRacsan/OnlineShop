@@ -41,5 +41,20 @@ module.exports = {
             }
             callback(null, rows);
         });
+    },
+
+    addRating: function(productId, rating, callback) {        
+        const query = `
+            UPDATE products 
+            SET rating_count = rating_count + 1,
+                rating_sum = rating_sum + ?
+            WHERE id = ?`;
+        
+        db.run(query, [rating, productId], function(err) {
+            if(err) {
+                console.error('Database error:', err); // Add error logging
+            }
+            callback(err);
+        });
     }
 };

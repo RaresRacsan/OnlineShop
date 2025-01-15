@@ -44,6 +44,23 @@
                 <%= (product.rating_sum / product.rating_count).toFixed(1) %> / 5
                 (<%= product.rating_count %> reviews)
             <% } %>
+            <div class="rating-form">
+                <h3>Rate this product:</h3>
+                <form id="ratingForm">
+                    <input type="hidden" name="productId" value="<%= product.id %>">
+                    <select name="rating" required>
+                        <option value="">Select rating</option>
+                        <option value="1">1 - Poor</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="3">3 - Good</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="5">5 - Excellent</option>
+                    </select>
+                    <button type="submit">Submit Rating</button>
+                </form>
+                <div id="ratingMessage" style="display: none;"></div>
+            </div>
+            <script src="/js/rating.js"></script>
         </div>
     
         <form id="addToCartForm" action="/cart/add" method="POST">

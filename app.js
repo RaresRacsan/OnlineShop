@@ -15,6 +15,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // Body parser for handling form submissions
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes

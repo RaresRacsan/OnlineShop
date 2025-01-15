@@ -67,6 +67,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
     -- Insert products
     INSERT INTO products (name, price, quantity, description, category_id, rating_count, rating_sum) VALUES 
         ('Air Purifier', 199.99, 15, 'HEPA filter air purifier', 9, 12, 55),
+        ('Baby Monitor', 79.99, 15, 'Digital video baby monitor', 11, 42, 185),
         ('Backpack', 49.99, 30, 'Waterproof hiking backpack', 19, 25, 115),
         ('Baseball Glove', 29.99, 40, 'Leather baseball glove', 16, 8, 35),
         ('Basketball', 24.99, 50, 'Official size basketball', 16, 15, 65),
