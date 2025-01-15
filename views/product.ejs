@@ -22,34 +22,36 @@
     </div>
 
     <!-- Item information -->
-    <h1><%= product.name %></h1>
-    <p>Price: $<%= product.price %></p>
-    <p>Quantity: 
-    <% if(product.quantity === 0) { %>
-        Out of stock
-    <% } else { %>
-    Only <%= product.quantity%> left!
-    <% } %>
-    </p>
-    <p>Description: <%= product.description %></p>
-    <p>Rating: <% if(product.rating_sum === 0 || product.rating_count === 0) { %>
-                    No ratings yet
-                <% } else { %>
-                    <%= product.rating_sum / product.rating_count %> / 5
-                <% } %></p>      
-    </p>   
-
-    <!-- Add to cart form -->
-    <form id="addToCartForm" action="/cart/add" method="POST">
-        <input type="hidden" name="productId" value="<%= product.id %>">
-        <input type="number" name="quantity" value="1" min="1" max="<%= product.quantity %>">
-        <button type="submit">Add to Cart</button>
-    </form>
-
-    <!-- Message div -->
-    <div id="message" style="display: none;"></div>
-
-    <a href="/">Back to Home</a>
+    <div class="product-details">
+        <h1><%= product.name %></h1>
+        <p class="product-price">$<%= product.price %></p>
+        <p class="product-quantity <%= product.quantity === 0 ? 'out-of-stock' : '' %>">
+            <% if(product.quantity === 0) { %>
+                Out of stock
+            <% } else { %>
+                Only <%= product.quantity%> left!
+            <% } %>
+        </p>
+        <p class="product-description"><%= product.description %></p>
+        <div class="product-rating">
+            Rating: 
+            <% if(product.rating_sum === 0 || product.rating_count === 0) { %>
+                No ratings yet
+            <% } else { %>
+                <%= (product.rating_sum / product.rating_count).toFixed(1) %> / 5
+                (<%= product.rating_count %> reviews)
+            <% } %>
+        </div>
+    
+        <form id="addToCartForm" action="/cart/add" method="POST">
+            <input type="hidden" name="productId" value="<%= product.id %>">
+            <input type="number" name="quantity" value="1" min="1" max="<%= product.quantity %>">
+            <button type="submit">Add to Cart</button>
+        </form>
+    
+        <div id="message" style="display: none;"></div>
+    
+        <a href="/" class="back-link">Back to Home</a>
 
     <script src="/js/add_to_cart.js"></script>
 </body>

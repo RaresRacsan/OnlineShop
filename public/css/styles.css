@@ -289,3 +289,112 @@ ul {
 .back-link:hover {
     text-decoration: underline;
 }
+
+.product-details {
+    max-width: 800px;
+    margin: 100px auto 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-details h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.5em;
+    color: #2c5282;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.product-quantity {
+    color: #666;
+    margin: 15px 0;
+}
+
+.product-quantity.out-of-stock {
+    color: #e53e3e;
+}
+
+.product-description {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.product-rating {
+    background-color: #f7fafc;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+#addToCartForm {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f7fafc;
+    border-radius: 5px;
+}
+
+#addToCartForm input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#addToCartForm button {
+    padding: 10px 20px;
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#addToCartForm button:hover {
+    background-color: #2b6cb0;
+}
+
+#message {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.success-message {
+    background-color: #48bb78;
+    color: white;
+}
+
+.error-message {
+    background-color: #f56565;
+    color: white;
+}
+
+.back-link {
+    display: inline-block;
+    margin: 20px 0;
+    color: #4299e1;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-details {
+        margin: 80px 10px 0;
+        padding: 15px;
+    }
+}
