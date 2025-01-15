@@ -116,7 +116,9 @@ const db = new sqlite3.Database(dbPath, (err) => {
         ('Soccer Ball', 19.99, 40, 'Official size soccer ball', 16, 51, 230),
         ('Sunglasses', 129.99, 25, 'Polarized sunglasses', 1, 64, 290),
         ('Tablet', 399.99, 12, '10-inch Android tablet', 5, 57, 260),
-        ('Zero Sugar Energy Drink', 2.99, 100, 'Zero sugar energy drink', 6, 55, 250)
+        ('Zero Sugar Energy Drink', 2.99, 100, 'Zero sugar energy drink', 6, 55, 250);
+
+        ALTER TABLE products ADD COLUMN image TEXT DEFAULT 'default.jpg';
 `;
 
     db.exec(schema, (err) => {

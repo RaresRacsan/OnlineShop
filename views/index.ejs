@@ -42,6 +42,9 @@
         <div class="trending-grid">
             <% trendingItems.forEach(item => { %>
                 <div class="product-card">
+                    <div class="product-image">
+                        <img src="/images/<%= item.name.toLowerCase().replace(/ /g, '_') %>.jpg" alt="<%= item.name %>">
+                    </div>
                     <h3 class="product-name"><%= item.name %></h3>
                     <p class="product-price">$<%= item.price %></p>
                     <p class="product-rating">

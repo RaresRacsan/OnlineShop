@@ -23,6 +23,9 @@
 
     <!-- Item information -->
     <div class="product-details">
+        <div class="product-image-large">
+            <img src="/images/<%= product.name.toLowerCase().replace(/ /g, '_') %>.jpg" alt="<%= product.name %>">
+        </div>
         <h1><%= product.name %></h1>
         <p class="product-price">$<%= product.price %></p>
         <p class="product-quantity <%= product.quantity === 0 ? 'out-of-stock' : '' %>">
