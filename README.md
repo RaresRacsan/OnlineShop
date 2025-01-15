@@ -98,7 +98,8 @@ Presented in the database_schema file.
 ![image](https://github.com/user-attachments/assets/2ac73b5a-d61d-4f1b-ae73-a4ae5c766654)
 ![image](https://github.com/user-attachments/assets/a2660ee3-60c3-4978-b974-db0597ed61dd)
 ![image](https://github.com/user-attachments/assets/bd74c185-89e7-40d4-af6f-cae10b5fbd16)
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/17b0a2e3-ce29-4c0a-a3de-76939a5f3495)
+
 
 
 
