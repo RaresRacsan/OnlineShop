@@ -1,6 +1,6 @@
 # OnlineShop
 
-to do: - complete css
+to do:
        - add rate feature
        - add whishlist
 
