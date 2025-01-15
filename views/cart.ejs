@@ -1,41 +1,62 @@
-<!-- View Cart Page-->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
-    <h1>Your Shopping Cart</h1>
+    <!-- Header -->
+    <div class="header">
+        <h1 class="title">Online Shop</h1>
+        <form class="search-form" action="/search" method="GET">
+            <input class="search-input" type="text" name="query" placeholder="Search products...">
+            <button class="search-btn" type="submit">Search</button>
+        </form>
+        <div class="cart-button">
+            <a class="view-cart-text" href="/cart">View Cart</a>
+        </div>
+    </div>
 
-    <% if (cartItems.length === 0) { %>
-        <p>Your cart is empty</p>
-    <% } else { %>
-        <ul>
-            <% cartItems.forEach(item => { %>
-                <li id="cart-item-<%= item.id %>">
-                    <span onclick="removeItem(<%= item.id %>)">✕</span>
-                    <%= item.name %> - $<%= item.price %> 
-                    (Quantity: <%= item.total_quantity %>)
-                </li>
-            <% }); %>
-        </ul>
-    <% } %>
+    <!-- Cart Content -->
+    <div class="cart-container">
+        <h2>Your Shopping Cart</h2>
 
-    <p>Total: <% let total = 0 %>
-        <% cartItems.forEach(item => { %>
-        <% total = total + item.price * item.total_quantity %>
-    <% }); %>
-    $<%= total %>
-    </p>
-    
-    <button id="resetCart">Reset Cart</button>
-    <button id="checkout">Checkout</button>
+        <% if (cartItems.length === 0) { %>
+            <p class="empty-cart-message">Your cart is empty</p>
+        <% } else { %>
+            <ul id="cart-items">
+                <% cartItems.forEach(item => { %>
+                    <li id="cart-item-<%= item.id %>" class="cart-item">
+                        <div class="item-info">
+                            <span class="remove-item" onclick="removeItem(<%= item.id %>)">✕</span>
+                            <span class="item-name"><%= item.name %></span>
+                        </div>
+                        <div class="item-details">
+                            <span class="item-price">$<%= item.price %></span>
+                            <span class="item-quantity">(Quantity: <%= item.total_quantity %>)</span>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
 
-    <div id="message"></div>
-    
-    <p><a href="/">Back to Home</a></p>
+            <div class="cart-total">
+                <% let total = 0 %>
+                <% cartItems.forEach(item => { %>
+                    <% total += item.price * item.total_quantity %>
+                <% }); %>
+                Total: $<%= total.toFixed(2) %>
+            </div>
+
+            <div class="cart-buttons">
+                <button id="resetCart" class="cart-button-action">Reset Cart</button>
+                <button id="checkout" class="cart-button-action">Checkout</button>
+            </div>
+        <% } %>
+
+        <div id="message" class="cart-message"></div>
+        
+        <a href="/" class="back-link">Continue Shopping</a>
+    </div>
 
     <script src="/js/remove_from_cart.js"></script>
     <script src="/js/cart_operations.js"></script>
